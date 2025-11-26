@@ -26,7 +26,7 @@ char* ler_cha(char* cha_requerido){
     return cha_lido ;
 }
 int remover_cha(char* cha_requerido){
-    char *codigo=0;
+    char *codigo;
     char cha_lido[10];
     char leitura_cha[31];
     int encontrada = 0;
