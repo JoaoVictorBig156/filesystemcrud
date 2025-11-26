@@ -16,9 +16,9 @@ char* ler_cha(char* cha_requerido){
     char codigo[3];
     FILE *file;
     file = fopen("cha.txt", "r");
-    while (!feof(file))
+    while (fgets(leitura_cha,31,file);)
     {
-        fgets(leitura_cha,31,file);
+        
        if (sscanf(leitura_cha, "codigo:%2s Nome do cha:%23[^\n]", codigo, temp) != 2)
             continue;
         if(strcmp(codigo, cha_requerido) == 0){
