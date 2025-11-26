@@ -9,7 +9,7 @@ fclose (file);
 return 0;
 }
 char* ler_cha(char* cha_requerido){
-    char leitura_cha[31];
+    char leitura_cha[42];
     char* cha_lido = malloc(30); 
     strcpy(cha_lido, "Chá não encontrado");
     char codigo[3];
@@ -17,8 +17,8 @@ char* ler_cha(char* cha_requerido){
     file = fopen("cha.txt", "r");
     while (!feof(file))
     {
-        fgets(leitura_cha,31,file);
-        sscanf(leitura_cha, "codigo:%2s Nome do cha:%10[^\n]",codigo,cha_lido);
+        fgets(leitura_cha,42,file);
+        sscanf(leitura_cha, "codigo:%2s %30[^\n]",codigo,cha_lido);
         if(strcmp(codigo, cha_requerido) == 0){
         break;
         }
@@ -29,12 +29,12 @@ char* ler_cha(char* cha_requerido){
 int remover_cha(char* cha_requerido){
     char codigo[3];
     char cha_lido[10];
-    char leitura_cha[31];
+    char leitura_cha[42];
     int encontrada = 0;
     FILE *origem, *destino;
     origem = fopen("cha.txt", "r");
     destino = fopen("temp.txt", "w");
-    while (fgets(leitura_cha, 31, origem))
+    while (fgets(leitura_cha, 42, origem))
     {
         sscanf(leitura_cha, "codigo:%2s Nome do cha:%10[^\n]", codigo, cha_lido);
         if (strcmp(codigo, cha_requerido) == 0)
