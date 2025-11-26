@@ -10,8 +10,8 @@ return 0;
 }
 char* ler_cha(char* cha_requerido){
     char leitura_cha[31];
-    char* cha_lido="Chá não encontrado" ;
-    char *codigo[3];
+    char cha_lido="Chá não encontrado" ;
+    char codigo[3];
     FILE *file;
     file = fopen("cha.txt", "r");
     while (!feof(file))
