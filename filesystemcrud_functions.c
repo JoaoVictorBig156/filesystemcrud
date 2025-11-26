@@ -18,7 +18,7 @@ char* ler_cha(char* cha_requerido){
     {
         fgets(leitura_cha,31,file);
         sscanf(leitura_cha, "codigo:%2s Nome do cha:%10[^\n]", ,codigo,cha_lido);
-        if(strcmp(codigo, codigo_requerido) == 0){
+        if(strcmp(codigo, cha_requerido) == 0){
         break;
         }
     }
@@ -36,7 +36,7 @@ int remover_cha(char* cha_requerido){
     while (fgets(leitura_cha, 31, origem))
     {
         sscanf(leitura_cha, "codigo:%2s Nome do cha:%10[^\n]", codigo, cha_lido);
-        if (strcmp(codigo, codigo_requerido) == 0)
+        if (strcmp(codigo, cha_requerido) == 0)
         {
             encontrada = 1;
             printf("\nExcluindo aluno %s\n", leitura_cha);
