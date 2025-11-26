@@ -11,4 +11,5 @@ void main()
     leitura[strcspn(leitura, "\r\n")] = 0;
     assert(strcmp(leitura, "Nome do cha:hibisco") == 0);
     free(leitura);
+    assert(remover_cha("01")==0)
 }
