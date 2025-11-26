@@ -46,7 +46,7 @@ int remover_cha(char* cha_requerido){
         if (strcmp(codigo, cha_requerido) == 0)
         {
             encontrada = 1;
-            printf("\nExcluindo aluno %s\n", leitura_cha);
+            printf("\nExcluindo cha %s\n", leitura_cha);
         }
         else
         {
