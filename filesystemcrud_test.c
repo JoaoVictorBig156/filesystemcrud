@@ -12,4 +12,7 @@ void main()
     assert(strcmp(leitura, "hibisco") == 0);
     free(leitura);
     assert(remover_cha("01")==1);
+    leitura = ler_cha("01");
+    assert(strcmp(leitura, "Chá não encontrado") == 0);
+    free(leitura);
 }
