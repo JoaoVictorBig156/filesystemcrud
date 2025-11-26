@@ -10,7 +10,7 @@ return 0;
 }
 char* ler_cha(char* cha_requerido){
     char leitura_cha[31];
-    char cha_lido="Chá não encontrado" ;
+    char cha_lido[31] = "Chá não encontrado";
     char codigo[3];
     FILE *file;
     file = fopen("cha.txt", "r");
@@ -35,8 +35,8 @@ int remover_cha(char* cha_requerido){
     destino = fopen("temp.txt", "w");
     while (fgets(leitura_cha, 31, origem))
     {
-        sscanf(leitura_cha, "%2[^,],%10[^,]", codigo, cha_lido);
-        if (codigo == cha_requerido)
+        sscanf(leitura_cha, "%2s[^,],%10[^,]", codigo, cha_lido);
+        if (strcmp(codigo, codigo_requerido) == 0)
         {
             encontrada = 1;
             printf("\nExcluindo aluno %s\n", leitura_cha);
