@@ -10,7 +10,8 @@ return 0;
 }
 char* ler_cha(char* cha_requerido){
     char leitura_cha[31];
-    char cha_lido[31] = "Chá não encontrado";
+    char cha_lido = malloc(20); 
+    cha_lido="Chá não encontrado";
     char codigo[3];
     FILE *file;
     file = fopen("cha.txt", "r");
@@ -26,7 +27,7 @@ char* ler_cha(char* cha_requerido){
     return cha_lido ;
 }
 int remover_cha(char* cha_requerido){
-    char *codigo[3];
+    char codigo[3];
     char cha_lido[10];
     char leitura_cha[31];
     int encontrada = 0;
