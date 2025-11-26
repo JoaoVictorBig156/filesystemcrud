@@ -17,7 +17,7 @@ char* ler_cha(char* cha_requerido){
     while (!feof(file))
     {
         fgets(leitura_cha,31,file);
-        sscanf(leitura_cha, "%2[^,],%10[^,]" ,codigo,cha_lido);
+        sscanf(leitura_cha, "codigo:%2s Nome do cha:%10[^\n]", ,codigo,cha_lido);
         if(strcmp(codigo, codigo_requerido) == 0){
         break;
         }
@@ -35,7 +35,7 @@ int remover_cha(char* cha_requerido){
     destino = fopen("temp.txt", "w");
     while (fgets(leitura_cha, 31, origem))
     {
-        sscanf(leitura_cha, "%2s[^,],%10[^,]", codigo, cha_lido);
+        sscanf(leitura_cha, "codigo:%2s Nome do cha:%10[^\n]", codigo, cha_lido);
         if (strcmp(codigo, codigo_requerido) == 0)
         {
             encontrada = 1;
