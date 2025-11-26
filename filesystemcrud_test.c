@@ -10,5 +10,5 @@ void main()
     char *leitura = ler_cha("01");
     leitura[strcspn(leitura, "\r\n")] = 0;
     assert(strcmp(leitura, "codigo:01 ,Nome do cha:hibisco") == 0);
-    free(cha_leitura);
+    free(cha_lido);
 }
