@@ -18,7 +18,7 @@ char* ler_cha(char* cha_requerido){
     while (!feof(file))
     {
         fgets(leitura_cha,31,file);
-       if (sscanf(leitura_cha, "codigo:%2s Nome do cha:%10[^\n]", codigo, nome) != 2)
+       if (sscanf(leitura_cha, "codigo:%2s Nome do cha:%10[^\n]", codigo, cha_lido) != 2)
             continue;
         if(strcmp(codigo, cha_requerido) == 0){
         break;
