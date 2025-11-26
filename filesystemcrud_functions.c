@@ -22,9 +22,6 @@ char* ler_cha(char* cha_requerido){
        if (sscanf(leitura_cha, "codigo:%2s Nome do cha:%23[^\n]", codigo, temp) != 2)
             continue;
         if(strcmp(codigo, cha_requerido) == 0){
-        break;
-        }
-        if(strcmp(codigo, cha_requerido) == 0){
             strcpy(cha_lido, temp);
             break;
         }
