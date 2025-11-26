@@ -10,8 +10,8 @@ return 0;
 }
 char* ler_cha(char* cha_requerido){
     char leitura_cha[31];
-    char cha_lido = malloc(20); 
-    cha_lido="Chá não encontrado";
+    char* cha_lido = malloc(20); 
+    strcpy(cha_lido, "Chá não encontrado");
     char codigo[3];
     FILE *file;
     file = fopen("cha.txt", "r");
