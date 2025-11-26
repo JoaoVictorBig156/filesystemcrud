@@ -43,7 +43,7 @@ int remover_cha(char* cha_requerido){
         }
         else
         {
-            fprintf(destino,"codigo:%d Nome do cha:%s\n", codigo, cha_lido);
+            fprintf(destino,"codigo:%s Nome do cha:%s\n", codigo, cha_lido);
         }
     }
     fclose(origem);
