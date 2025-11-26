@@ -8,10 +8,10 @@ fprintf(file, "codigo:%d Nome do cha:%s\n",codigo ,cha);
 fclose (file);
 return 0;
 }
-char* ler_cha(int cha_requerido){
+char* ler_cha(int* cha_requerido){
     char leitura_cha[31];
     char* cha_lido="Chá não encontrado" ;
-    int codigo=0;
+    int* codigo=0;
     FILE *file;
     file = fopen("cha.txt", "r");
     while (!feof(file))
@@ -25,8 +25,8 @@ char* ler_cha(int cha_requerido){
     fclose(file);
     return cha_lido ;
 }
-int remover_cha(int cha_requerido){
-    int codigo=0;
+int remover_cha(int* cha_requerido){
+    int* codigo=0;
     char cha_lido[10];
     char leitura_cha[31];
     int encontrada = 0;
