@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int criar_cha(char* cha, int codigo){
+int criar_cha(char* cha, int* codigo){
 FILE*file;
 file= fopen("cha.txt","a");
 fprintf(file, "codigo:%ls Nome do cha:%s\n",codigo ,cha);
