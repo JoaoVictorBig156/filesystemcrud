@@ -9,6 +9,6 @@ void main()
     assert(file != NULL);
     char *leitura = ler_cha("01");
     leitura[strcspn(leitura, "\r\n")] = 0;
-    assert(strcmp(leitura, "Nome do cha,:hibisco") == 0);
+    assert(strcmp(leitura, "Nome do cha",":hibisco") == 0);
     free(leitura);
 }
