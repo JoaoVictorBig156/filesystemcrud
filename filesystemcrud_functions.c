@@ -4,7 +4,7 @@
 int criar_cha(char* cha, int codigo){
 FILE*file;
 file= fopen("cha.txt","a");
-fprintf(file, "codigo:%%ls Nome do cha:%s\n",codigo ,cha);
+fprintf(file, "codigo:%ls Nome do cha:%s\n",codigo ,cha);
 fclose (file);
 return 0;
 }
@@ -17,7 +17,7 @@ char* ler_cha(int* cha_requerido){
     while (!feof(file))
     {
         fgets(leitura_cha,31,file);
-        sscanf(leitura_cha, "%02[^,],%10s[^,]" ,codigo,cha_lido);
+        sscanf(leitura_cha, "%02ls[^,],%10s[^,]" ,codigo,cha_lido);
         if(codigo==cha_requerido){
         break;
         }
@@ -35,7 +35,7 @@ int remover_cha(int* cha_requerido){
     destino = fopen("temp.txt", "w");
     while (fgets(leitura_cha, 31, origem))
     {
-        sscanf(leitura_cha, "%02[^,],%10s[^,]", codigo, cha_lido);
+        sscanf(leitura_cha, "%02ls[^,],%10s[^,]", codigo, cha_lido);
         if (codigo == cha_requerido)
         {
             encontrada = 1;
