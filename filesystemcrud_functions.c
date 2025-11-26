@@ -34,7 +34,7 @@ int remover_cha(char* cha_requerido){
     FILE *origem, *destino;
     origem = fopen("cha.txt", "r");
     destino = fopen("temp.txt", "w");
-    while (!feof(origem)){
+   
     while (fgets(leitura_cha, 31, origem))
     {
         sscanf(leitura_cha, "codigo:%2s Nome do cha:%10[^\n]", codigo, cha_lido);
@@ -49,7 +49,7 @@ int remover_cha(char* cha_requerido){
             fprintf(destino,"codigo:%s Nome do cha:%s\n", codigo, cha_lido);
         }
         }
-    }
+    
     fclose(origem);
     fclose(destino);
     remove("cha.txt");
