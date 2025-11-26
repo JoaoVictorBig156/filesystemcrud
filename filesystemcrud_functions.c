@@ -1,23 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int criar_cha(char* cha, int codigo){
+int criar_cha(char* cha, char* codigo){
 FILE*file;
 file= fopen("cha.txt","a");
-fprintf(file, "codigo:%d Nome do cha:%s\n",codigo ,cha);
+fprintf(file, "codigo:%s Nome do cha:%s\n",codigo ,cha);
 fclose (file);
 return 0;
 }
-char* ler_cha(int cha_requerido){
+char* ler_cha(char* cha_requerido){
     char leitura_cha[31];
     char* cha_lido="Chá não encontrado" ;
-    int codigo=0;
+    char *codigo;
     FILE *file;
     file = fopen("cha.txt", "r");
     while (!feof(file))
     {
         fgets(leitura_cha,31,file);
-        sscanf(leitura_cha, "%02d[^,],%10s[^,]" ,codigo,cha_lido);
+        sscanf(leitura_cha, "%2s[^,],%10s[^,]" ,codigo,cha_lido);
         if(codigo==cha_requerido){
         break;
         }
@@ -25,8 +25,8 @@ char* ler_cha(int cha_requerido){
     fclose(file);
     return cha_lido ;
 }
-int remover_cha(int cha_requerido){
-    int codigo=0;
+int remover_cha(char* cha_requerido){
+    char *codigo=0;
     char cha_lido[10];
     char leitura_cha[31];
     int encontrada = 0;
@@ -35,7 +35,7 @@ int remover_cha(int cha_requerido){
     destino = fopen("temp.txt", "w");
     while (fgets(leitura_cha, 31, origem))
     {
-        sscanf(leitura_cha, "%02d[^,],%10s[^,]", codigo, cha_lido);
+        sscanf(leitura_cha, "%2s[^,],%10s[^,]", codigo, cha_lido);
         if (codigo == cha_requerido)
         {
             encontrada = 1;
