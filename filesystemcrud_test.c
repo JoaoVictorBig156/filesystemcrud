@@ -7,5 +7,7 @@ void main()
     FILE *file;
     file = fopen("cha.txt", "r");
     assert(file != NULL);
-    assert(strcmp(ler_cha(01), "codigo:01 ,Nome do cha:hibisco") == 0);
+    char *leitura = ler_cha(01);
+    leitura[strcspn(leitura, "\r\n")] = 0;
+    assert(strcmp(leitura), "codigo:01 ,Nome do cha:hibisco") == 0);
 }
